@@ -1,0 +1,54 @@
+
+<header>Sama</header>
+<section>
+  <div class="city-details">
+    <div class="city">Pune City</div>
+    <button (click)="onRefresh()">Refresh</button>
+  </div>
+  <div *ngFor="let day of weather">
+    <div class="weather">
+      <div class="day">
+        {{day.date}}
+      </div>
+      <div class="weather--section">
+        <div class="item">
+          <span class="label">Feels Like</span>
+          <span class="value">{{day.feelsLikeTemperature}}</span>
+        </div>
+      </div>
+      <div class="weather--section">
+        <div class="item">
+          <span class="label">Min</span>
+          <span class="value">{{day.minTemperature}}</span>
+        </div>
+        <div class="item">
+          <span class="label">Max</span>
+          <span class="value">{{day.maxTemperature}}</span>
+        </div>
+      </div>
+      <div class="weather--section">
+        <div class="item">
+          <span class="label">Sunrise</span>
+          <span class="value">{{day.sunrise}}</span>
+        </div>
+        <div class="item">
+          <span class="label">Sunset</span>
+          <span class="value">{{day.sunset}}</span>
+        </div>
+      </div>
+      <div class="weather--section">
+        <div class="item">
+          <span class="label">Humidity</span>
+          <span class="value">{{day.humidity}}</span>
+        </div>
+        <div class="item">
+          <span class="label">Wind Speed</span>
+          <span class="value">{{day.windSpeed}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+Copyright Rashmi Dixit 2020
+</footer>
