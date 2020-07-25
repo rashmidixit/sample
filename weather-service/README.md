@@ -1,28 +1,37 @@
 # Sama WeatherService
 
-This application displays the 5 day weather forecast for Pune city
+This application displays the 5 day weather forecast for Pune city. This is a responsive application.
 
-## How to Build
+## How to Build, Deploy and Test
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Pre-requisites
 
-## Code scaffolding
+- This has been tested on the following environment. Ensure you have these installed.
+    - node v12.13.0
+    - npm v6.12.0
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Build
 
-## Build
+Run `npm install` to install all required node packages.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Running unit tests
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `ng test` to execute the unit tests.
 
 ## Future Enhancements
 
-- COntrol units of temperature via configuration. Other settings.
+### Features
+
+- Show more information using details provided by the Weather API (Historical data, )
+- Fetch a list of cities from GeoDB Cities API and allow user to see weather of any city
+- View weather for multiple cities.
+- User Preferences: Allow user to choose cities to view weather of.  
+
+- Control units of temperature via configuration - other settings.
 - Based on page width, show all 5 days temperature in the same row
+- Multi-language based on browser locale - language and dates
+
+### Technical Debt
+- Make the page accessible
+
