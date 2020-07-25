@@ -10,6 +10,7 @@ import { WeatherForecast } from './weather-interface';
 export class AppComponent implements OnInit {
   title = 'app-weather-service';
   weather: WeatherForecast[];
+  error: string;
   constructor(private weatherService: WeatherService) {
   }
 
@@ -21,11 +22,16 @@ export class AppComponent implements OnInit {
 
 
   async updateWeather(city: string) {
+    this.error = undefined;
     try {
       this.weather = await this.weatherService.getFiveDayForecast(city);
-      console.log('after output');
     } catch (error) {
       console.log('unable to get weather');
+      if (error.error.message){
+        this.error = error.error;
+      }
+      else
+        this.error = error;
     }
   }
 

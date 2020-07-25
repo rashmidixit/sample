@@ -5,55 +5,62 @@
     <div class="city">Pune City Weather</div>
     <button (click)="onRefresh()">Fetch updates</button>
   </div>
-  <div *ngFor="let day of weather">
-    <div class="weather">
-      <div class="day">
-        {{day.date}}
+  <div *ngIf="!error">
+    <div *ngFor="let day of weather">
+      <div class="weather">
+        <div class="day">
+          {{day.date}}
+        </div>
+        <div class="weather--section">
+          <div class="item">
+            <span class="label">Feels Like</span>
+            <span class="value">{{day.feelsLikeTemperature}}</span>
+          </div>
+        </div>
+        <div class="weather--section">
+          <div class="item">
+            <span class="label">Min</span>
+            <span class="value">{{day.minTemperature}}</span>
+          </div>
+          <div class="item">
+            <span class="label">Max</span>
+            <span class="value">{{day.maxTemperature}}</span>
+          </div>
+        </div>
+        <div class="weather--section">
+          <div class="item">
+            <span class="label">Sunrise</span>
+            <span class="value">{{day.sunrise}}</span>
+          </div>
+          <div class="item">
+            <span class="label">Sunset</span>
+            <span class="value">{{day.sunset}}</span>
+          </div>
+        </div>
+        <div class="weather--section">
+          <div class="item">
+            <span class="label">Humidity</span>
+            <span class="value">{{day.humidity}}</span>
+          </div>
+          <div class="item">
+            <span class="label">Wind Speed</span>
+            <span class="value">{{day.windSpeed}}</span>
+          </div>
+        </div>
+        <div class="weather--section">
+          <div class="item bigger">
+            <span class="label">Details</span>
+            <span class="value">{{day.description}}</span>
+          </div>
+          </div>
       </div>
-      <div class="weather--section">
-        <div class="item">
-          <span class="label">Feels Like</span>
-          <span class="value">{{day.feelsLikeTemperature}}</span>
-        </div>
-      </div>
-      <div class="weather--section">
-        <div class="item">
-          <span class="label">Min</span>
-          <span class="value">{{day.minTemperature}}</span>
-        </div>
-        <div class="item">
-          <span class="label">Max</span>
-          <span class="value">{{day.maxTemperature}}</span>
-        </div>
-      </div>
-      <div class="weather--section">
-        <div class="item">
-          <span class="label">Sunrise</span>
-          <span class="value">{{day.sunrise}}</span>
-        </div>
-        <div class="item">
-          <span class="label">Sunset</span>
-          <span class="value">{{day.sunset}}</span>
-        </div>
-      </div>
-      <div class="weather--section">
-        <div class="item">
-          <span class="label">Humidity</span>
-          <span class="value">{{day.humidity}}</span>
-        </div>
-        <div class="item">
-          <span class="label">Wind Speed</span>
-          <span class="value">{{day.windSpeed}}</span>
-        </div>
-      </div>
-      <div class="weather--section">
-        <div class="item bigger">
-          <span class="label">Details</span>
-          <span class="value">{{day.description}}</span>
-        </div>
-        </div>
     </div>
   </div>
+  <div *ngIf="error">
+    A problem has occurred: 
+    {{error.message}}
+  </div>
+
 </section>
 <footer>
 Copyright Rashmi Dixit 2020

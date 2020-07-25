@@ -33,5 +33,7 @@ Run `ng test` to execute the unit tests.
 - Multi-language based on browser locale - language and dates
 
 ### Technical Debt
+
+- UI flashes an error message while the page is loading. The error handling needs to be made better.
 - Make the page accessible
 
