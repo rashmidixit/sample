@@ -2,8 +2,8 @@
 <header>Sama</header>
 <section>
   <div class="city-details">
-    <div class="city">Pune City</div>
-    <button (click)="onRefresh()">Refresh</button>
+    <div class="city">Pune City Weather</div>
+    <button (click)="onRefresh()">Fetch updates</button>
   </div>
   <div *ngFor="let day of weather">
     <div class="weather">
@@ -46,6 +46,12 @@
           <span class="value">{{day.windSpeed}}</span>
         </div>
       </div>
+      <div class="weather--section">
+        <div class="item bigger">
+          <span class="label">Details</span>
+          <span class="value">{{day.description}}</span>
+        </div>
+        </div>
     </div>
   </div>
 </section>
