@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    // TODO: Get a list of all the cities from a service (GeoDB Cities API) 
+    // TODO: Get a list of all the cities from a service (GeoDB Cities API)
     // and show them in a drop down. This way we support multiple cities.
     this.updateWeather('Pune');
   }
@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  onRefresh(){
+  onRefresh() {
     this.updateWeather('Pune');
   }
 

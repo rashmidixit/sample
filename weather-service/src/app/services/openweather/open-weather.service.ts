@@ -36,9 +36,9 @@ export class OpenWeatherService implements WeatherInterface {
 
     response.daily.forEach(element => {
       const weatherItem: WeatherForecast = {
-        date: moment.unix(element.dt).format("ll"),
-        sunrise: moment.unix(element.sunrise).format("HH:mm"),
-        sunset: moment.unix(element.sunset).format("HH:mm"),
+        date: moment.unix(element.dt).format('ll'),
+        sunrise: moment.unix(element.sunrise).format('HH:mm'),
+        sunset: moment.unix(element.sunset).format('HH:mm'),
         minTemperature: element.temp.min,
         maxTemperature: element.temp.max,
         feelsLikeTemperature: element.feels_like.day,
