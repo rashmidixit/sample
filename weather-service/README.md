@@ -1,12 +1,14 @@
 # Sama WeatherService
 
-This application displays the 5 day weather forecast for Pune city. This is a responsive application.
+This application displays the 5 day weather forecast for Pune city. 
+- This is a responsive application built using Angular 8
+- OpenWeather API has been used to fetch weather information.
 
 ## How to Build, Deploy and Test
 
 ### Pre-requisites
 
-- This has been tested on the following environment. Ensure you have these installed.
+- This has been tested on the following environment. Ensure you have at least these versions of the following installed.
     - node v12.13.0
     - npm v6.12.0
 
@@ -40,4 +42,4 @@ Run `ng test` to execute the unit tests. All 7 test cases should pass.
 - UI flashes an error message while the page is loading. The error handling needs to be made better.
 - Write more tests - especially around the component to ensure the data is being rendered.
 - Make the page accessible
-
+- The API key is hard coded into the application. These details should be fetched from a configuration file.
