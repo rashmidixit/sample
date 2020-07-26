@@ -26,12 +26,13 @@ Run `ng test` to execute the unit tests. All 7 test cases should pass.
 
 ### Corrections
 
-- The problem statement states that only 5 day weather forecast needs to be shown. However, this application shows a 7 day weather forecast. Have avoided stripping data that the API already returns. This can be corrected by restricting the number of records passed up to the WeatherService
+- The problem statement states that only 5 day weather forecast needs to be shown. However, this application shows a 7 day weather forecast. Have avoided stripping data that the API already returns. 
+- The application is not showing all the details sent back by the API for a day. Given a good UI, all the information can be incorporated.
 
 ### Features
 
-- Show more information using details provided by the Weather API (Historical data, other minute weather information)
-- Fetch a list of cities from GeoDB Cities API and allow user to see weather of any city
+- Show historical, Minute, current weather information. 
+- Fetch a list of cities from GeoDB Cities API and allow user to see weather of any city.
 - View weather for multiple cities.
 - User Preferences: Allow user to choose cities to view weather of, control units of temperature, etc.
 - Based on page width, show all 5 days temperature in the same row
