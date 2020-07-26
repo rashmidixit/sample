@@ -16,7 +16,7 @@ describe('CityCoordinatesService', () => {
 
   it('should return correct longitude/latitude for Pune', () => {
     const service: CityCoordinatesService = TestBed.get(CityCoordinatesService);
-    expect(service.getLatLongForCityName("Pune")).toEqual(dummyLatLong);
+    expect(service.getLatLongForCityName('Pune')).toEqual(dummyLatLong);
   });
 
 });

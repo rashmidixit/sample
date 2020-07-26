@@ -27,11 +27,11 @@ export class AppComponent implements OnInit {
       this.weather = await this.weatherService.getFiveDayForecast(city);
     } catch (error) {
       console.log('unable to get weather');
-      if (error.error.message){
+      if (error.error.message) {
         this.error = error.error;
-      }
-      else
+      } else {
         this.error = error;
+      }
     }
   }
 
