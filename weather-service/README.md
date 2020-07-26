@@ -22,6 +22,10 @@ Run `ng test` to execute the unit tests. All 7 test cases should pass.
 
 ## Future Enhancements
 
+### Corrections
+
+- The problem statement states that only 5 day weather forecast needs to be shown. However, this application shows a 7 day weather forecast. Have avoided stripping data that the API already returns. This can be corrected by restricting the number of records passed up to the WeatherService
+
 ### Features
 
 - Show more information using details provided by the Weather API (Historical data, other minute weather information)
