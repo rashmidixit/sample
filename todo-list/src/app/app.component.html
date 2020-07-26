@@ -1,10 +1,35 @@
 <header>To-Do List</header>
 <section>
-  <div *ngFor="let item of todoList">
-    <div class="item">
-      <div class="id">{{item.id}}</div>
-      <div class="description">{{item.description}}</div>
-      <div class="priority">{{item.priority}}</div>
+  <span class="title">Enter the task and choose priority. Click Add to add to the list.</span>
+  <div class="add-block">
+    <div class="input-item">
+      <span>Task</span>
+      <input #newDescription>
+    </div>
+    <div class="input-item">
+      <span>Priority</span>
+      <select #newPriority>
+        <option value="Normal">Normal</option>
+        <option value="Low">Low</option>
+        <option value="High">High</option>
+      </select>
+    </div>
+    <button (click)="addItem()">Add</button>
+
+  </div>
+  <div class="todo-list">
+    <span class="todo-header"></span>
+    <div *ngFor="let item of todoList; let i = index" class="todo-item">
+        <input type="checkbox" #item{{i}}>
+        <div class="description" #description{{i}}>{{item.description}}</div>
+        <!-- <editable (update)="updateField(index, 'name')"></editable>
+          <input [formControl]="getControl(index, 'description')" focusable>
+        </editable> -->
+        <div class="priority" #priority{{i}}>{{item.priority}}</div>
+        <div class="actions">
+        <fa-icon icon="pencil-alt"></fa-icon>
+        <fa-icon icon="trash"></fa-icon>
+        </div>
     </div>
   </div>
 </section>

@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Priority, TodoItem } from './todo-item';
 import { FormArray, FormGroup, FormControl, Validators } from '@angular/forms';
+import { TodoService } from './services/todo.service';
+// import { fa } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-todo',
@@ -9,16 +11,17 @@ import { FormArray, FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class AppComponent implements OnInit {
   title = 'todo-list';
-
+  priorityTypes: Priority;
   todoList: TodoItem[] = [];
 
   controls: FormArray;
+  @ViewChild('newDescription', {static: false}) newDescription:ElementRef;
+  @ViewChild('newPriority', {static: false}) newPriority:ElementRef;
 
 
-  constructor() {
-    this.todoList.push({id: 1, description: 'First', priority: Priority.High});
-    this.todoList.push({id: 2, description: 'Second', priority: Priority.High});
- }
+  constructor(private todoService: TodoService) {
+    this.todoList = todoService.getItems();
+   }
 
  ngOnInit() {
   const groups = this.todoList.map(item => {
@@ -28,6 +31,11 @@ export class AppComponent implements OnInit {
     });
   });
   this.controls = new FormArray(groups);
+ }
+
+ addItem(){
+  this.todoList = this.todoService.addItem(this.newDescription.nativeElement.value, 
+                                          this.newPriority.nativeElement.value);
  }
 
   getControl(index: number, field: string ): FormControl {

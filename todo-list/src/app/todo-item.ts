@@ -1,11 +1,10 @@
 export enum Priority {
-    High,
-    Low,
-    Normal
+    High = "High",
+    Low = "Low",
+    Normal = "Normal"
 }
 
 export interface TodoItem {
-    id: number;
     description: string;
     priority: Priority;
 }

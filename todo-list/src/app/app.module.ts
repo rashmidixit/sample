@@ -1,23 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { TodoService } from './services/todo.service';
 
 import { AppComponent } from './app.component';
+import { EditableComponent } from './editable/editable.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EditableComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      TodoService, { dataEncapsulation: false }
-    )
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
-  providers: [],
+  providers: [
+    TodoService
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(library: FaIconLibrary){
+    library.addIconPacks(fas);
+  }
+}
