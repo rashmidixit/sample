@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { WeatherService } from './services/weather.service';
 import { OpenWeatherService } from './services/openweather/open-weather.service';
-import { CityCoordinatesService } from './services/city-coordinates.service';
+import { CityCoordinatesService } from './services/city-coordinates/city-coordinates.service';
 
 
 @NgModule({

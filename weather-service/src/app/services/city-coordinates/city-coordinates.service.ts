@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LatLong } from '../lat-long';
+import { LatLong } from '../../lat-long';
 
 @Injectable({
   providedIn: 'root'

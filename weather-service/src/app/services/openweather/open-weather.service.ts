@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { WeatherInterface, WeatherForecast } from '../../weather-interface';
+import { WeatherInterface, WeatherForecast } from '../weather-interface';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import * as moment from 'moment';
 
@@ -48,7 +48,7 @@ export class OpenWeatherService implements WeatherInterface {
       };
       forecast.push(weatherItem);
     });
-
+    console.log(forecast);
     return forecast;
 
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { WeatherInterface, WeatherForecast } from '../weather-interface';
+import { WeatherInterface, WeatherForecast } from './weather-interface';
 import { OpenWeatherService } from './openweather/open-weather.service';
-import { CityCoordinatesService } from './city-coordinates.service';
+import { CityCoordinatesService } from './city-coordinates/city-coordinates.service';
 
 @Injectable({
   providedIn: 'root'

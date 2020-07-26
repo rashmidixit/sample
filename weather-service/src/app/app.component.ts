@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from './services/weather.service';
-import { WeatherForecast } from './weather-interface';
+import { WeatherForecast } from './services/weather-interface';
 
 @Component({
   selector: 'app-weather-service',
@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   title = 'app-weather-service';
   weather: WeatherForecast[];
   error: string;
-  constructor(private weatherService: WeatherService) {
+  constructor(public weatherService: WeatherService) {
   }
 
   ngOnInit() {

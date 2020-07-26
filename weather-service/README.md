@@ -14,26 +14,26 @@ This application displays the 5 day weather forecast for Pune city. This is a re
 
 Run `npm install` to install all required node packages.
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
+Run `ng build` to get a distribution under folder dist.
 
 ### Running unit tests
 
-Run `ng test` to execute the unit tests.
+Run `ng test` to execute the unit tests. All 7 test cases should pass. 
 
 ## Future Enhancements
 
 ### Features
 
-- Show more information using details provided by the Weather API (Historical data, )
+- Show more information using details provided by the Weather API (Historical data, other minute weather information)
 - Fetch a list of cities from GeoDB Cities API and allow user to see weather of any city
 - View weather for multiple cities.
-- User Preferences: Allow user to choose cities to view weather of.  
-
-- Control units of temperature via configuration - other settings.
+- User Preferences: Allow user to choose cities to view weather of, control units of temperature, etc.
 - Based on page width, show all 5 days temperature in the same row
 - Multi-language based on browser locale - language and dates
 
 ### Technical Debt
 
 - UI flashes an error message while the page is loading. The error handling needs to be made better.
+- Write more tests - especially around the component to ensure the data is being rendered.
 - Make the page accessible
 
