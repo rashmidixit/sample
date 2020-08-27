@@ -12,8 +12,10 @@ export class TodoService {
     this.initDB();
   }
   private initDB() {
-     this.todoList = [{description: "First task", priority: Priority.Normal}];
-  }
+     this.todoList = [{description: "Get groceries for tomorrow", priority: Priority.Low},
+            {description: "Exercise!", priority: Priority.Normal},
+            {description: "Dont forget to get meds.", priority: Priority.High}];
+  } 
 
   getItems(): TodoItem[]{
     return this.todoList;

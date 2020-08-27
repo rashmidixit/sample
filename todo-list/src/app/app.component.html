@@ -1,37 +1,38 @@
 <header>To-Do List</header>
 <section>
-  <span class="title">Enter the task and choose priority. Click Add to add to the list.</span>
-  <div class="add-block">
-    <div class="input-item">
-      <span>Task</span>
-      <input #newDescription>
-    </div>
-    <div class="input-item">
-      <span>Priority</span>
-      <select #newPriority>
-        <option value="Normal">Normal</option>
-        <option value="Low">Low</option>
-        <option value="High">High</option>
-      </select>
-    </div>
-    <button (click)="addItem()">Add</button>
+  <div appExploreRenderer></div>
+  <h4>Add a to-do and its priority</h4>
+  <form [formGroup]="addTodoForm" (ngSubmit)="addItem()">
+    <label for="newDescription">Todo</label>
+    <input
+      type="text"
+      #newDescription
+      placeholder="Enter Description"
+      formControlName="newDescription"
+      tabindex=“0”
+    />
+    <label for="newPriority">Priority</label>
+    <select #newPriority formControlName="newPriority">
+      <option value="Normal">Normal</option>
+      <option value="Low">Low</option>
+      <option value="High">High</option>
+    </select>
+    <button type="submit" [disabled]="!addTodoForm.valid">Add</button>
+  </form>
+  <!-- <form [formGroup]="itemControls">  -->
+    <table class="item-form-table">
+  <div *ngFor="let item of itemControls.controls;" >
+    <tr>
+    <ng-container [formGroup]="item">
+      <td><input disabled formControlName="description" /></td>
+      <td><input disabled formControlName="priority" /></td>
+    </ng-container>
+    </tr>
+  </div>
+  </table>
+<!-- </form> -->
 
-  </div>
-  <div class="todo-list">
-    <span class="todo-header"></span>
-    <div *ngFor="let item of todoList; let i = index" class="todo-item">
-        <input type="checkbox" #item{{i}}>
-        <div class="description" #description{{i}}>{{item.description}}</div>
-        <!-- <editable (update)="updateField(index, 'name')"></editable>
-          <input [formControl]="getControl(index, 'description')" focusable>
-        </editable> -->
-        <div class="priority" #priority{{i}}>{{item.priority}}</div>
-        <div class="actions">
-        <fa-icon icon="pencil-alt"></fa-icon>
-        <fa-icon icon="trash"></fa-icon>
-        </div>
-    </div>
-  </div>
+
 </section>
 <footer>
 Copyright Rashmi Dixit 2020

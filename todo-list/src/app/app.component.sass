@@ -1,3 +1,5 @@
+$primary-highlight-color: #EC8C54
+
 header
     margin: 0 0.5em 0 0.5em
     font-size: 2em
@@ -16,6 +18,7 @@ section
 .add-block
     display: flex
     align-items: center
+    justify-content: space-between
     button
         font-size: 1.2em
         padding: 0.1em 1em
@@ -39,13 +42,15 @@ section
 
 .todo-list
     margin: 1em 0em
-    border: 1px solid
 
 .todo-item
     margin: 0.5em
     display: grid
     grid-template-columns: 0.5fr 4fr 1fr 0.5fr
-    grid-gap: 0.1em
+    border-bottom: 0.01em solid
+    padding: 0.5em
+    span 
+        color: $primary-highlight-color
     .selection
         padding: 0.1em
     .description
@@ -54,3 +59,13 @@ section
         padding: 0.1em
     .actions
         padding: 0.1em
+        fa-icon
+            &:hover
+                cursor: pointer
+            &+fa-icon
+                margin-left: 0.5em
+
+.item-form-table
+    tr
+        input
+            height: 1.2em

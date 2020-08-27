@@ -3,28 +3,24 @@ import { NgModule } from '@angular/core';
 import { TodoService } from './services/todo.service';
 
 import { AppComponent } from './app.component';
-import { EditableComponent } from './editable/editable.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { fas } from '@fortawesome/free-solid-svg-icons';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ExploreRendererDirective } from './directives/explore-renderer.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EditableComponent
+    ExploreRendererDirective
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FormsModule
   ],
   providers: [
     TodoService
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
-  constructor(library: FaIconLibrary){
-    library.addIconPacks(fas);
-  }
+export class AppModule {
+  constructor(){}
 }
