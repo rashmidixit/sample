@@ -62,17 +62,16 @@
 
 
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 479px) {
+ @media only screen and (min-device-width: 320px) and 
+        (max-device-width: 479px) 
+          {
 .mosaic {
   display: flex;
   align-content: space-between;
   counter-reset: items;
+  flex-direction: column;
   }
 
-  .item {
-  width: 32%;
-
-  }
   .break{
           display: none;
       }
