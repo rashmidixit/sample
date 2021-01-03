@@ -8,7 +8,8 @@ class Mosaic extends Component{
         let items: any = [];
         let totalHeight = 0;
         cardList.forEach((card: Card) => {
-            items.push(<div key={"card"+card.index} className="item" style={{height : card.height}}>
+            items.push(<div key={"card"+card.index} className="item" 
+                style={{height : card.height, width: card.width}}>
                 {card.index}
                 </div>);
         });

@@ -1,11 +1,9 @@
 .mosaic {
-        
   background-color: #f7f7f7;
   border-radius: 3px;
   padding: 20px;
-  width: 60%;
-  margin: 40px auto;
-  counter-reset: items;
+  width: 90%;
+  margin: 20px auto;
   }
 .item {
   margin-bottom: 2%;
@@ -23,24 +21,13 @@
 .break{
   display: none;
 }
-@media screen and (min-width : 641px){
+@media screen and (min-width : 735px){
   .mosaic {
   display: flex;
   flex-flow: column wrap;
   align-content: space-between;
-
-  height: 100vh;
-  
-  background-color: #f7f7f7;
-  border-radius: 3px;
-  padding: 20px;
-  width: 60%;
-  margin: 40px auto;
+  height: 900px;
   counter-reset: items;
-  }
-
-  .item {
-      width: 24%;
   }
 
   .item:nth-of-type(4n+1) { order: 1; }
@@ -60,16 +47,14 @@
   }
 } 
 
-
-
- @media only screen and (min-device-width: 320px) and 
-        (max-device-width: 479px) 
-          {
+ @media only screen and (max-width: 329px) 
+{
 .mosaic {
   display: flex;
   align-content: space-between;
   counter-reset: items;
   flex-direction: column;
+  height: 900px;
   }
 
   .break{
@@ -77,36 +62,53 @@
       }
 } 
 
-@media only screen and (min-device-width: 480px) 
-             and (max-device-width: 640px) 
-             and (orientation: landscape) { 
-      .mosaic {
-          display: flex;
-          flex-flow: column wrap;
-          align-content: space-between;
-          counter-reset: items;
-      }
+@media only screen and (min-width: 330px) and 
+        (max-width: 549px) 
+          {
+.mosaic {
+  display: flex;
+  align-content: space-between;
+  counter-reset: items;
+  flex-direction: row; 
+  flex-wrap: wrap;
+  height: 900px;
+  }
 
-      .mosaic::before,
-      .mosaic::after {
+  .item{
+    flex: 0 0 160px;
+    margin: 2%;
+  }
+
+  .break{
+          display: none;
+      }
+} 
+@media only screen and (min-width: 550px) and (max-width: 734px) 
+  {
+    .mosaic {
+      display: flex;
+      flex-flow: column wrap;
+      align-content: space-between;
+      counter-reset: items;
+      height: 900px;
+    }
+
+  
+
+  .item:nth-child(3n+1) { order: 1; }
+  .item:nth-child(3n+2) { order: 2; }
+  .item:nth-child(3n)   { order: 3; }
+  .mosaic::before,
+  .mosaic::after {
       content: "";
       flex-basis: 100%;
       width: 0;
       order: 2;
-      }
+    }
 
-      .item:nth-child(3n+1) { order: 1; }
-      .item:nth-child(3n+2) { order: 2; }
-      .item:nth-child(3n)   { order: 3; }
-
-      .item {
-          width: 32%;
-      }
-
-
-      .break{
-          display: none;
-      }
+  .break{
+      display: none;
   }
+} 
 body { font-family: sans-serif; }
 h3 { text-align: center; }
